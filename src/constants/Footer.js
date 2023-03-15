@@ -1,12 +1,19 @@
+import { Link } from "react-router-dom"
 import styled from "styled-components"
 import img from "../assets/hoje.svg"
 
 export default function Footer(){
     return (
         <FooterStyle>
-            <p className="habits">Hábitos</p>
+            <Link to="/habitos">
+                <p className="habits">Hábitos</p>
+            </Link>
+            <Link to="/hoje">
                 <img src={img} />
-            <p className="historic">Histórico</p>
+            </Link>
+            <Link to="historico">
+                <p className="historic">Histórico</p>
+            </Link>
         </FooterStyle>
     )
 }
@@ -38,5 +45,8 @@ const FooterStyle = styled.div`
     }
     img {
         margin-bottom: 45px;
+    }
+    a {
+        text-decoration: none;
     }
 `

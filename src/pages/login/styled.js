@@ -35,6 +35,9 @@ export const LoginStyled = styled.div`
         line-height: 26px;
         text-align: center;
         color: #FFFFFF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     p {
         font-family: 'Lexend Deca';

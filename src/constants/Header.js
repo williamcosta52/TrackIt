@@ -1,11 +1,16 @@
 import styled from "styled-components"
 import img from "../assets/download.png"
+import { useContext } from "react"
+import LoginContext from "../pages/login/LoginContext"
 
 export default function Header(){
+
+    const { userDados } = useContext(LoginContext);
+
     return (
         <HeaderStyled>
             <h1>TrackIt</h1>
-            <img alt="profile-img" src={img} />
+            <img alt="profile-img" src={userDados.image} />
         </HeaderStyled>
     )
 }
@@ -19,6 +24,7 @@ const HeaderStyled = styled.div`
     background-color: #126BA5;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     position: fixed;
+    top: 0px;
     h1 {
         font-family: 'Playball';
         font-style: normal;
