@@ -142,3 +142,50 @@ export const SaveHabit = styled.div`
         margin-top: 7px;
     }
 `
+export const HabitDiv = styled.div`
+    width: 340px;
+    height: 91px;
+    margin-left: 17px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    margin-top: 18px;
+`
+export const TextImg = styled.div`
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    p {
+        font-family: 'Lexend Deca';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 19.976px;
+        line-height: 25px;
+        color: #666666;
+        margin-top: 5px;
+        width: 200px;
+        margin-left: 17px;
+    }
+    img {
+        width: 13px;
+        height: 15px;
+        margin-top: 3px;
+        margin-right: 8px;
+    }
+`
+export const DivDays = styled.div`
+    margin-left: 13px;
+    button {
+        background: #FFFFFF;
+        border: 1px solid #D5D5D5;
+        border-radius: 5px;
+        font-family: 'Lexend Deca';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 19.976px;
+        line-height: 25px;
+        color: #DBDBDB;
+        margin-left: 4px;
+        margin-top: 8px;
+    }
+`

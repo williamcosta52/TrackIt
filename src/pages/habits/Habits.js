@@ -1,9 +1,17 @@
 import Header from "../../constants/Header"
 import Footer from "../../constants/Footer"
-import { HabitStyle, ContainerHabit, AddNewHabit, AddButton } from "./styled"
+import { HabitStyle, ContainerHabit, AddNewHabit, AddButton, DivHabit } from "./styled"
 import Habit from "./Habit"
+import HabitText from "./HabitText"
+import { useState } from "react"
+import { useContext } from "react"
+import LoginContext from "../login/LoginContext"
 
 export default function Habits(){
+
+    
+
+    const { newHabit, setNewHabit, habit, addedHabit } = useContext(LoginContext);
 
     return (
         <ContainerHabit>
@@ -11,12 +19,15 @@ export default function Habits(){
             <HabitStyle>
                 <AddNewHabit>
                     <p>Meus hábitos</p>
-                    <AddButton><span>+</span></AddButton>
+                    <AddButton onClick={() => {
+                        setNewHabit(<Habit />) 
+                        }}><span>+</span></AddButton>
                 </AddNewHabit>
-                {/* <DivHabit>
-                    <p>Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!</p>
-                </DivHabit> */}
-                <Habit />
+                {newHabit}
+                {addedHabit}
+                <DivHabit>
+                    {habit}
+                </DivHabit>
             </HabitStyle>
             <Footer />
         </ContainerHabit>
