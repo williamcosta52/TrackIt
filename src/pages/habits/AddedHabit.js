@@ -8,14 +8,14 @@ export default function AddedHabit(){
     const { dayHabit, clickDay } = useContext(LoginContext);
     const days = ["D", "S", "T" ,"Q", "Q", "S", "S"];
     return (
-        <HabitDiv>
+        <HabitDiv  data-test="habit-container">
             <TextImg>
-                <p>{dayHabit}</p>
-                <img alt="trash-icon" src={trash} />
+                <p data-test="habit-name">{dayHabit}</p>
+                <img data-test="habit-delete-btn" alt="trash-icon" src={trash} />
             </TextImg>
             <DivDays>
                 {days.map((d, index) => (
-                    <button key={index}>{d}</button>
+                    <button data-test="habit-day" key={index}>{d}</button>
                 ))}
             </DivDays>
         </HabitDiv>

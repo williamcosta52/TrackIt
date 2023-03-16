@@ -4,14 +4,14 @@ import img from "../assets/hoje.svg"
 
 export default function Footer(){
     return (
-        <FooterStyle>
-            <Link to="/habitos">
+        <FooterStyle data-test="menu">
+            <Link data-test="habit-link" to="/habitos">
                 <p className="habits">Hábitos</p>
             </Link>
-            <Link to="/hoje">
+            <Link data-test="today-link" to="/hoje">
                 <img src={img} />
             </Link>
-            <Link to="historico">
+            <Link data-test="history-link" to="historico">
                 <p className="historic">Histórico</p>
             </Link>
         </FooterStyle>

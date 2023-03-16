@@ -42,7 +42,8 @@ export default function Register(){
         <Logo />
         <LoginStyled>
             <form onSubmit={signup}>
-                <input 
+                <input
+                data-test="email-input"
                 type="email" 
                 placeholder="email" 
                 required
@@ -50,7 +51,8 @@ export default function Register(){
                 disabled={disable}
                 onChange={e => setEmail(e.target.value)}
                 />
-                <input 
+                <input
+                data-test="password-input"
                 type="password" 
                 placeholder="senha" 
                 required
@@ -58,7 +60,8 @@ export default function Register(){
                 disabled={disable}
                 onChange={e => setPassword(e.target.value)}
                 />
-                <input 
+                <input
+                data-test="user-name-input"
                 type="text" 
                 placeholder="nome" 
                 required
@@ -66,7 +69,8 @@ export default function Register(){
                 disabled={disable}
                 onChange={e => setName(e.target.value)}
                 />
-                <input 
+                <input
+                data-test="user-image-input"
                 type="url" 
                 placeholder="foto" 
                 required
@@ -74,10 +78,10 @@ export default function Register(){
                 disabled={disable}
                 onChange={e => setImagem(e.target.value)}
                 />
-                <button disabled={disable} type="submit">{spinner}</button>
+                <button data-test="signup-btn" disabled={disable} type="submit">{spinner}</button>
             </form>
             <br />
-            <Link to={"/"}>
+            <Link  data-test="login-link" to={"/"}>
                 <p>Já tem uma conta? Faça login!</p>
             </Link>
         </LoginStyled>

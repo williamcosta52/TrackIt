@@ -19,7 +19,7 @@ export default function Habits(){
             <HabitStyle>
                 <AddNewHabit>
                     <p>Meus hábitos</p>
-                    <AddButton onClick={() => {
+                    <AddButton data-test="habit-create-btn" onClick={() => {
                         setNewHabit(<Habit />) 
                         }}><span>+</span></AddButton>
                 </AddNewHabit>

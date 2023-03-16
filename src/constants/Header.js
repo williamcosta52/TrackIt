@@ -8,7 +8,7 @@ export default function Header(){
     const { userDados } = useContext(LoginContext);
 
     return (
-        <HeaderStyled>
+        <HeaderStyled data-test="header">
             <h1>TrackIt</h1>
             <img alt="profile-img" src={userDados.image} />
         </HeaderStyled>

@@ -18,9 +18,10 @@ export default function Habit(){
     }
 
     return (
-    <HabitCard>
+    <HabitCard data-test="habit-create-container">
         <form onSubmit={addingHabit}>
-            <input 
+            <input
+            data-test="habit-name-input"
             placeholder="nome do hábito"
             type="text"
             required
@@ -29,15 +30,15 @@ export default function Habit(){
             />
                 <HabitCardButton>
                     {days.map((d, index) => (
-                        <button onClick={(e) =>{ 
+                        <button data-test="habit-day" onClick={(e) =>{ 
                             e.preventDefault()
                             clickDay.push(d) 
                         }} key={index}>{d}</button>
                     ))}
                 </HabitCardButton>
                 <SaveHabit>
-                    <p>Cancelar</p>
-                    <button type="submit">Salvar</button>
+                    <p data-test="habit-create-cancel-btn">Cancelar</p>
+                    <button data-test="habit-create-save-btn" type="submit">Salvar</button>
                 </SaveHabit>
         </form>
     </HabitCard>
