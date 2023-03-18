@@ -1,6 +1,5 @@
 import AddedHabit from "../habits/AddedHabit";
 
-export default function Historic(){
-    return {
-    }
+export default function Historic() {
+	return {};
 }
