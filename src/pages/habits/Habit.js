@@ -31,7 +31,6 @@ export default function Habit() {
 			name: dayHabit,
 			days: clickDay,
 		};
-		console.log(info);
 		const url =
 			"https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits";
 		const promise = axios.post(url, info, config);

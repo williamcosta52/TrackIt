@@ -6,7 +6,7 @@ import ButtonDay from "../../components/ButtonDay";
 import axios from "axios";
 
 export default function AddedHabit({ h, setInfoHabits }) {
-	const { dayHabit, clickDay, userDados } = useContext(LoginContext);
+	const { userDados } = useContext(LoginContext);
 	const config = {
 		headers: {
 			Authorization: `Bearer ${userDados.token}`,
