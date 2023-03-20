@@ -45,7 +45,7 @@ export default function Habits() {
 					<AddButton
 						data-test="habit-create-btn"
 						onClick={() => {
-							setNewHabit(<Habit data-test="habit-create-container" />);
+							setNewHabit(<Habit />);
 							setSelectedButtonIndex(-1);
 						}}
 					>

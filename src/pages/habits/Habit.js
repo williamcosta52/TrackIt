@@ -38,7 +38,7 @@ export default function Habit() {
 		}
 	}
 	return (
-		<HabitCard>
+		<HabitCard data-test="habit-create-container">
 			<form onSubmit={addingHabit}>
 				<input
 					data-test="habit-name-input"
