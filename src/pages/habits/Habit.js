@@ -11,8 +11,9 @@ export default function Habit() {
 	const [disabled, setDisabled] = useState(false);
 
 	function addingHabit(e) {
+		e.preventDefault();
 		setDisabled(true);
-		if (e.target.value === "") {
+		if (dayHabit === "") {
 			alert("Insira um nome para o hábito");
 			setDisabled(false);
 		} else {
@@ -37,8 +38,8 @@ export default function Habit() {
 		}
 	}
 	return (
-		<HabitCard data-test="habit-create-container">
-			<form onSubmit={addingHabit}>
+		<HabitCard>
+			<form data-test="habit-create-container" onSubmit={addingHabit}>
 				<input
 					data-test="habit-name-input"
 					placeholder="nome do hábito"
