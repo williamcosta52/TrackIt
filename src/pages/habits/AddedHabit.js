@@ -39,7 +39,7 @@ export default function AddedHabit({ h, setInfoHabits }) {
 				/>
 			</TextImg>
 			<DivDays>
-				<ButtonDay />
+				<ButtonDay disabled={true} days={h.days} />
 			</DivDays>
 		</HabitDiv>
 	);

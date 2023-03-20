@@ -6,15 +6,8 @@ import ButtonDay from "../../components/ButtonDay";
 import axios from "axios";
 
 export default function Habit() {
-	const {
-		setDayHabit,
-		dayHabit,
-		setNewHabit,
-		setHabit,
-		setAddedHabit,
-		clickDay,
-		userDados,
-	} = useContext(LoginContext);
+	const { setDayHabit, dayHabit, setNewHabit, setHabit, clickDay, userDados } =
+		useContext(LoginContext);
 	const [disabled, setDisabled] = useState(false);
 
 	function addingHabit(e) {
@@ -51,7 +44,7 @@ export default function Habit() {
 					onChange={(e) => setDayHabit(e.target.value)}
 				/>
 				<HabitCardButton>
-					<ButtonDay disabled={disabled} />
+					<ButtonDay disabled={disabled} days={[]} />
 				</HabitCardButton>
 				<SaveHabit>
 					<p

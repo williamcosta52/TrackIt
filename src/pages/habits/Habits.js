@@ -14,7 +14,7 @@ import axios from "axios";
 import AddedHabit from "./AddedHabit";
 
 export default function Habits() {
-	const { newHabit, setNewHabit, habit, addedHabit, userDados } =
+	const { newHabit, setNewHabit, habit, userDados, setSelectedButtonIndex } =
 		useContext(LoginContext);
 	const [infoHabits, setInfoHabits] = useState([
 		{ id: "", name: "", days: "" },
@@ -46,6 +46,7 @@ export default function Habits() {
 						data-test="habit-create-btn"
 						onClick={() => {
 							setNewHabit(<Habit />);
+							setSelectedButtonIndex(-1);
 						}}
 					>
 						<span>+</span>

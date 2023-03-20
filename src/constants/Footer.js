@@ -1,15 +1,40 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import img from "../assets/hoje.svg";
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
+import { useContext } from "react";
+import LoginContext from "../pages/login/LoginContext";
 
 export default function Footer() {
+	const { percentage } = useContext(LoginContext);
 	return (
 		<FooterStyle data-test="menu">
 			<Link data-test="habit-link" to="/habitos">
 				<p className="habits">Hábitos</p>
 			</Link>
 			<Link data-test="today-link" to="/hoje">
-				<img src={img} />
+				<div
+					style={{
+						width: 90,
+						height: 90,
+						marginBottom: "30px",
+					}}
+				>
+					<CircularProgressbar
+						value={percentage}
+						text="Hoje"
+						background
+						backgroundPadding={6}
+						styles={buildStyles({
+							backgroundColor: "#3e98c7",
+							pathColor: "#fff",
+							trailColor: "transparent",
+							textColor: "#FFFFFF",
+						})}
+					/>
+					;
+				</div>
 			</Link>
 			<Link data-test="history-link" to="/historico">
 				<p className="historic">Histórico</p>

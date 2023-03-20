@@ -16,7 +16,11 @@ export default function App() {
 	const [newHabit, setNewHabit] = useState(""); //tela de adicionar hábito
 	const [habit, setHabit] = useState(<HabitText />); //texto de hábito
 	const [addedHabit, setAddedHabit] = useState(""); //tela para adicionar hábito
-	const clickDay = []; //dia escolhido no hábito
+	const [selectedButtonIndex, setSelectedButtonIndex] = useState(-1);
+	const [clickDay, setClickDay] = useState([]); //dia escolhido no hábito
+	const [percentage, setPercentage] = useState(0);
+
+	console.log(clickDay);
 
 	const userValue = {
 		userDados,
@@ -30,6 +34,11 @@ export default function App() {
 		addedHabit,
 		setAddedHabit,
 		clickDay,
+		selectedButtonIndex,
+		setSelectedButtonIndex,
+		setClickDay,
+		percentage,
+		setPercentage,
 	};
 
 	return (

@@ -1,9 +1,10 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import styled from "styled-components";
 import LoginContext from "../pages/login/LoginContext";
 
-export default function ButtonDay({ disabled }) {
-	const { clickDay } = useContext(LoginContext);
+export default function ButtonDay({ disabled, days }) {
+	const { clickDay, setClickDay, selectedButtonIndex, setSelectedButtonIndex } =
+		useContext(LoginContext);
 	const [buttonColor, setButtonColor] = useState([
 		"#ffffff",
 		"#ffffff",
@@ -13,24 +14,51 @@ export default function ButtonDay({ disabled }) {
 		"#ffffff",
 		"#ffffff",
 	]);
-	const [selectedButtonIndex, setSelectedButtonIndex] = useState(-1);
+	const [textColor, setTextColor] = useState([
+		"#DBDBDB",
+		"#DBDBDB",
+		"#DBDBDB",
+		"#DBDBDB",
+		"#DBDBDB",
+		"#DBDBDB",
+		"#DBDBDB",
+	]);
 	const handleClick = (index) => {
 		const newButtonColor = [...buttonColor];
-		newButtonColor[index] = "#CFCFCF";
-		setButtonColor(newButtonColor);
+		const newColor = [...textColor];
+		if (textColor[index] === "#DBDBDB") {
+			newColor[index] = "#FFFFFF";
+			setTextColor(newColor);
+		} else {
+			newColor[index] = "#DBDBDB";
+			setTextColor(newColor);
+		}
+		if (buttonColor[index] === "#ffffff") {
+			newButtonColor[index] = "#CFCFCF";
+			setButtonColor(newButtonColor);
+		} else {
+			newButtonColor[index] = "#ffffff";
+			setButtonColor(newButtonColor);
+		}
 		setSelectedButtonIndex(index);
 		if (clickDay.includes(index)) {
-			clickDay.filter((i) => i !== index);
+			setClickDay(clickDay.filter((i) => i !== index));
 		} else {
-			clickDay.push(index);
+			setClickDay([...clickDay, index]);
 		}
 	};
 	return (
 		<Button>
 			<button
 				type="button"
-				className={selectedButtonIndex[0] === 0 ? "selected" : ""}
-				style={{ background: buttonColor[0] }}
+				className={
+					selectedButtonIndex[0] === 0 || days.includes(0) ? "selected" : ""
+				}
+				style={
+					days.includes(0)
+						? { background: "#CFCFCF", color: "#FFFFFF" }
+						: { background: buttonColor[0], color: textColor[0] }
+				}
 				onClick={() => handleClick(0)}
 				disabled={disabled}
 			>
@@ -38,8 +66,14 @@ export default function ButtonDay({ disabled }) {
 			</button>
 			<button
 				type="button"
-				className={selectedButtonIndex[1] === 1 ? "selected" : ""}
-				style={{ background: buttonColor[1] }}
+				className={
+					selectedButtonIndex[1] === 1 || days.includes(1) ? "selected" : ""
+				}
+				style={
+					days.includes(1)
+						? { background: "#CFCFCF", color: "#FFFFFF" }
+						: { background: buttonColor[1], color: textColor[1] }
+				}
 				onClick={() => handleClick(1)}
 				disabled={disabled}
 			>
@@ -47,8 +81,14 @@ export default function ButtonDay({ disabled }) {
 			</button>
 			<button
 				type="button"
-				className={selectedButtonIndex[2] === 2 ? "selected" : ""}
-				style={{ background: buttonColor[2] }}
+				className={
+					selectedButtonIndex[2] === 2 || days.includes(0) ? "selected" : ""
+				}
+				style={
+					days.includes(2)
+						? { background: "#CFCFCF", color: "#FFFFFF" }
+						: { background: buttonColor[2], color: textColor[2] }
+				}
 				onClick={() => handleClick(2)}
 				disabled={disabled}
 			>
@@ -56,8 +96,14 @@ export default function ButtonDay({ disabled }) {
 			</button>
 			<button
 				type="button"
-				className={selectedButtonIndex[3] === 3 ? "selected" : ""}
-				style={{ background: buttonColor[3] }}
+				className={
+					selectedButtonIndex[3] === 3 || days.includes(3) ? "selected" : ""
+				}
+				style={
+					days.includes(3)
+						? { background: "#CFCFCF", color: "#FFFFFF" }
+						: { background: buttonColor[3], color: textColor[3] }
+				}
 				onClick={() => handleClick(3)}
 				disabled={disabled}
 			>
@@ -65,8 +111,14 @@ export default function ButtonDay({ disabled }) {
 			</button>
 			<button
 				type="button"
-				className={selectedButtonIndex[4] === 4 ? "selected" : ""}
-				style={{ background: buttonColor[4] }}
+				className={
+					selectedButtonIndex[4] === 4 || days.includes(4) ? "selected" : ""
+				}
+				style={
+					days.includes(4)
+						? { background: "#CFCFCF", color: "#FFFFFF" }
+						: { background: buttonColor[4], color: textColor[4] }
+				}
 				onClick={() => handleClick(4)}
 				disabled={disabled}
 			>
@@ -74,8 +126,14 @@ export default function ButtonDay({ disabled }) {
 			</button>
 			<button
 				type="button"
-				className={selectedButtonIndex[5] === 5 ? "selected" : ""}
-				style={{ background: buttonColor[5] }}
+				className={
+					selectedButtonIndex[5] === 5 || days.includes(5) ? "selected" : ""
+				}
+				style={
+					days.includes(5)
+						? { background: "#CFCFCF", color: "#FFFFFF" }
+						: { background: buttonColor[5], color: textColor[5] }
+				}
 				onClick={() => handleClick(5)}
 				disabled={disabled}
 			>
@@ -83,8 +141,14 @@ export default function ButtonDay({ disabled }) {
 			</button>
 			<button
 				type="button"
-				className={selectedButtonIndex[6] === 6 ? "selected" : ""}
-				style={{ background: buttonColor[6] }}
+				className={
+					selectedButtonIndex[6] === 6 || days.includes(6) ? "selected" : ""
+				}
+				style={
+					days.includes(6)
+						? { background: "#CFCFCF", color: "#FFFFFF" }
+						: { background: buttonColor[6], color: textColor[6] }
+				}
 				onClick={() => handleClick(6)}
 				disabled={disabled}
 			>
@@ -107,8 +171,8 @@ const Button = styled.div`
 		line-height: 25px;
 		color: ${(props) => props.theme.textColor};
 		margin: 8px 2px;
-	}
-	button.selected {
-		color: #ffffff;
+		button.selectec {
+			color: #ffffff;
+		}
 	}
 `;

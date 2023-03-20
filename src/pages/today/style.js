@@ -25,7 +25,7 @@ export const DivTitle = styled.div`
 		font-weight: 400;
 		font-size: 17.976px;
 		line-height: 22px;
-		color: #bababa;
+		color: ${(props) => (props.pColor ? "#8FC549" : "#bababa")} !important;
 	}
 `;
 export const Habit = styled.div`
@@ -56,6 +56,15 @@ export const Habit = styled.div`
 		font-size: 12.976px;
 		line-height: 16px;
 		color: #666666;
+	}
+	.current {
+		color: ${(props) => (props.done ? "#8FC549" : "")};
+	}
+	.highest {
+		color: ${(props) =>
+			props.currentSequence === props.highest && props.currentSequence !== 0
+				? "#8FC549"
+				: ""};
 	}
 `;
 export const CheckButton = styled.button`
