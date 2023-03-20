@@ -11,25 +11,30 @@ export default function Habit() {
 	const [disabled, setDisabled] = useState(false);
 
 	function addingHabit(e) {
-		e.preventDefault();
 		setDisabled(true);
-		setNewHabit("");
-		setHabit("");
-		const config = {
-			headers: {
-				Authorization: `Bearer ${userDados.token}`,
-			},
-		};
-		const info = {
-			name: dayHabit,
-			days: clickDay,
-		};
-		const url =
-			"https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits";
-		const promise = axios.post(url, info, config);
+		if (e.target.value === "") {
+			alert("Insira um nome para o hábito");
+			setDisabled(false);
+		} else {
+			e.preventDefault();
+			setNewHabit("");
+			setHabit("");
+			const config = {
+				headers: {
+					Authorization: `Bearer ${userDados.token}`,
+				},
+			};
+			const info = {
+				name: dayHabit,
+				days: clickDay,
+			};
+			const url =
+				"https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits";
+			const promise = axios.post(url, info, config);
 
-		promise.then((r) => setDisabled(false), setDayHabit(""));
-		promise.catch((e) => setDisabled(false), console.log(e));
+			promise.then((r) => setDisabled(false), setDayHabit(""));
+			promise.catch((e) => setDisabled(false), console.log(e));
+		}
 	}
 	return (
 		<HabitCard data-test="habit-create-container">
@@ -38,10 +43,11 @@ export default function Habit() {
 					data-test="habit-name-input"
 					placeholder="nome do hábito"
 					type="text"
-					required
 					value={dayHabit}
 					disabled={disabled}
-					onChange={(e) => setDayHabit(e.target.value)}
+					onChange={(e) => {
+						setDayHabit(e.target.value);
+					}}
 				/>
 				<HabitCardButton>
 					<ButtonDay disabled={disabled} days={[]} />
