@@ -1,10 +1,9 @@
 import { LoginStyled } from "./styled";
 import Logo from "../../constants/Logo";
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import axios from "axios";
 import { ThreeDots } from "react-loader-spinner";
-import { useContext } from "react";
 import LoginContext from "./LoginContext";
 
 export default function Login(e) {

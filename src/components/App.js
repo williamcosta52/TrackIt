@@ -11,13 +11,13 @@ import { useState } from "react";
 import HabitText from "../pages/habits/HabitText";
 
 export default function App() {
-	const [userDados, setUserDados] = useState({}); //informações sobre o usuário que retorna do servidor
-	const [dayHabit, setDayHabit] = useState([]); //titulo do hábito
-	const [newHabit, setNewHabit] = useState(""); //tela de adicionar hábito
-	const [habit, setHabit] = useState(<HabitText />); //texto de hábito
-	const [addedHabit, setAddedHabit] = useState(""); //tela para adicionar hábito
+	const [userDados, setUserDados] = useState({});
+	const [dayHabit, setDayHabit] = useState("");
+	const [newHabit, setNewHabit] = useState("");
+	const [habit, setHabit] = useState(<HabitText />);
+	const [addedHabit, setAddedHabit] = useState("");
 	const [selectedButtonIndex, setSelectedButtonIndex] = useState(-1);
-	const [clickDay, setClickDay] = useState([]); //dia escolhido no hábito
+	const [clickDay, setClickDay] = useState([]);
 	const [percentage, setPercentage] = useState(0);
 
 	console.log(clickDay);

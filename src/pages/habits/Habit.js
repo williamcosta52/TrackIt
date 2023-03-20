@@ -1,7 +1,6 @@
 import { useContext, useState } from "react";
 import LoginContext from "../login/LoginContext";
 import { HabitCard, HabitCardButton, SaveHabit } from "./styled";
-import AddedHabit from "./AddedHabit";
 import ButtonDay from "../../components/ButtonDay";
 import axios from "axios";
 
@@ -15,6 +14,7 @@ export default function Habit() {
 		setDisabled(true);
 		if (dayHabit === "") {
 			alert("Insira um nome para o hábito");
+			e.preventDefault();
 			setDisabled(false);
 		} else {
 			e.preventDefault();
@@ -55,6 +55,7 @@ export default function Habit() {
 				</HabitCardButton>
 				<SaveHabit>
 					<p
+						disabled={disabled}
 						data-test="habit-create-cancel-btn"
 						onClick={() => setNewHabit("")}
 					>

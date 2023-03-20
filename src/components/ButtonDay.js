@@ -52,6 +52,7 @@ export default function ButtonDay({ disabled, days }) {
 			<button
 				data-test="habit-day"
 				type="button"
+				disabled={disabled}
 				className={
 					selectedButtonIndex[0] === 0 || days.includes(0) ? "selected" : ""
 				}
@@ -61,13 +62,13 @@ export default function ButtonDay({ disabled, days }) {
 						: { background: buttonColor[0], color: textColor[0] }
 				}
 				onClick={() => handleClick(0)}
-				disabled={disabled}
 			>
 				D
 			</button>
 			<button
 				data-test="habit-day"
 				type="button"
+				disabled={disabled}
 				className={
 					selectedButtonIndex[1] === 1 || days.includes(1) ? "selected" : ""
 				}
@@ -77,13 +78,13 @@ export default function ButtonDay({ disabled, days }) {
 						: { background: buttonColor[1], color: textColor[1] }
 				}
 				onClick={() => handleClick(1)}
-				disabled={disabled}
 			>
 				S
 			</button>
 			<button
 				data-test="habit-day"
 				type="button"
+				disabled={disabled}
 				className={
 					selectedButtonIndex[2] === 2 || days.includes(0) ? "selected" : ""
 				}
@@ -93,7 +94,6 @@ export default function ButtonDay({ disabled, days }) {
 						: { background: buttonColor[2], color: textColor[2] }
 				}
 				onClick={() => handleClick(2)}
-				disabled={disabled}
 			>
 				T
 			</button>
@@ -116,6 +116,7 @@ export default function ButtonDay({ disabled, days }) {
 			<button
 				data-test="habit-day"
 				type="button"
+				disabled={disabled}
 				className={
 					selectedButtonIndex[4] === 4 || days.includes(4) ? "selected" : ""
 				}
@@ -125,13 +126,13 @@ export default function ButtonDay({ disabled, days }) {
 						: { background: buttonColor[4], color: textColor[4] }
 				}
 				onClick={() => handleClick(4)}
-				disabled={disabled}
 			>
 				Q
 			</button>
 			<button
 				data-test="habit-day"
 				type="button"
+				disabled={disabled}
 				className={
 					selectedButtonIndex[5] === 5 || days.includes(5) ? "selected" : ""
 				}
@@ -141,13 +142,13 @@ export default function ButtonDay({ disabled, days }) {
 						: { background: buttonColor[5], color: textColor[5] }
 				}
 				onClick={() => handleClick(5)}
-				disabled={disabled}
 			>
 				S
 			</button>
 			<button
 				data-test="habit-day"
 				type="button"
+				disabled={disabled}
 				className={
 					selectedButtonIndex[6] === 6 || days.includes(6) ? "selected" : ""
 				}
@@ -157,7 +158,6 @@ export default function ButtonDay({ disabled, days }) {
 						: { background: buttonColor[6], color: textColor[6] }
 				}
 				onClick={() => handleClick(6)}
-				disabled={disabled}
 			>
 				S
 			</button>
