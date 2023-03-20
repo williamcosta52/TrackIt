@@ -50,6 +50,7 @@ export default function ButtonDay({ disabled, days }) {
 	return (
 		<Button>
 			<button
+				data-test="habit-day"
 				type="button"
 				className={
 					selectedButtonIndex[0] === 0 || days.includes(0) ? "selected" : ""
@@ -65,6 +66,7 @@ export default function ButtonDay({ disabled, days }) {
 				D
 			</button>
 			<button
+				data-test="habit-day"
 				type="button"
 				className={
 					selectedButtonIndex[1] === 1 || days.includes(1) ? "selected" : ""
@@ -80,6 +82,7 @@ export default function ButtonDay({ disabled, days }) {
 				S
 			</button>
 			<button
+				data-test="habit-day"
 				type="button"
 				className={
 					selectedButtonIndex[2] === 2 || days.includes(0) ? "selected" : ""
@@ -95,6 +98,7 @@ export default function ButtonDay({ disabled, days }) {
 				T
 			</button>
 			<button
+				data-test="habit-day"
 				type="button"
 				className={
 					selectedButtonIndex[3] === 3 || days.includes(3) ? "selected" : ""
@@ -110,6 +114,7 @@ export default function ButtonDay({ disabled, days }) {
 				Q
 			</button>
 			<button
+				data-test="habit-day"
 				type="button"
 				className={
 					selectedButtonIndex[4] === 4 || days.includes(4) ? "selected" : ""
@@ -125,6 +130,7 @@ export default function ButtonDay({ disabled, days }) {
 				Q
 			</button>
 			<button
+				data-test="habit-day"
 				type="button"
 				className={
 					selectedButtonIndex[5] === 5 || days.includes(5) ? "selected" : ""
@@ -140,6 +146,7 @@ export default function ButtonDay({ disabled, days }) {
 				S
 			</button>
 			<button
+				data-test="habit-day"
 				type="button"
 				className={
 					selectedButtonIndex[6] === 6 || days.includes(6) ? "selected" : ""

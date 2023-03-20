@@ -15,8 +15,10 @@ export default function Register() {
 	const navigate = useNavigate();
 
 	function signup(e) {
-		setSpinner(<ThreeDots color="#ffffff" height="40" width="40" />);
 		setDisable(true);
+		setSpinner(
+			<ThreeDots color="#ffffff" height="40" width="40" disabled={disable} />
+		);
 		e.preventDefault();
 		const infoSign = {
 			email: email,
@@ -32,10 +34,10 @@ export default function Register() {
 			navigate("/");
 		});
 		promise.catch((err) => {
-			alert(err.data.response.data.message);
+			alert(err.response.data.message);
 			setSpinner("Cadastrar");
+			setDisable(false);
 		});
-		setDisable(false);
 	}
 
 	return (
