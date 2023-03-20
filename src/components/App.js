@@ -20,8 +20,6 @@ export default function App() {
 	const [clickDay, setClickDay] = useState([]);
 	const [percentage, setPercentage] = useState(0);
 
-	console.log(clickDay);
-
 	const userValue = {
 		userDados,
 		setUserDados,

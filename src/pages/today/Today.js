@@ -69,7 +69,6 @@ export default function Today() {
 		promise.then((r) => {
 			const habits = r.data;
 			setInformationH(habits);
-			console.log(habits);
 		});
 		promise.catch((e) => alert(e.response.data));
 	}, [dayHabit]);
